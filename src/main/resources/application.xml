@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xsi:schemaLocation="
+    http://www.spring.framework.org/schema/beans
+    http://www.spring.framework.org/schema/beans/spring-beans.xsd
+    http://www.spring.framework.org/schema/context
+    http://www.spring.framework.org/schema/context/spring-context.xsd
+    http://www.spring.framework.org/schema/context/aop
+    http://www.spring.framework.org/schema/context/aop/spring-aop-3.2.xsd"
+    default-lazy-init="false">
+    -->
+
+
+<!--
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.spring.framework.org/schema/context/aop/spring-aop-3.2.xsd"
+       default-lazy-init="false">
+       -->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+    <context:component-scan base-package="com.jomkie.spring.demo.free"/>
+
+    <bean id="user" class="com.jomkie.spring.entity.User"/>
+
+    <bean id="flyFeature" class="com.jomkie.spring.demo.lookup.FlyFeature"/>
+    <bean id="showFeature" class="com.jomkie.spring.demo.lookup.ShowFeature">
+        <lookup-method name="getFeature"  bean="flyFeature"/>
+    </bean>
+
+    <bean id = "runReplacer" class="com.jomkie.spring.demo.replace.RunReplacer"/>
+    <bean id = "originalRun" class="com.jomkie.spring.demo.replace.OriginalRun">
+       <replaced-method name="method" replacer="runReplacer">
+           <arg-type match="java.lang.String"/>
+       </replaced-method>
+    </bean>
+
+    <bean id = "freeClass" class="com.jomkie.spring.demo.free.FreeClass" p:id="1000"
+          p:username="Kangkang" p:age="22" p:address="天津"/>
+
+</beans>
