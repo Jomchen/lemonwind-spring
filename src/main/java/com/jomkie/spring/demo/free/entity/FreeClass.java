@@ -1,4 +1,4 @@
-package com.jomkie.spring.demo.free;
+package com.jomkie.spring.demo.free.entity;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.jomkie.spring.demo.free;
+package com.jomkie.spring.demo.free.postprocessor;
 
 import com.jomkie.spring.JomkieSpringApplication;
 import org.springframework.beans.BeansException;

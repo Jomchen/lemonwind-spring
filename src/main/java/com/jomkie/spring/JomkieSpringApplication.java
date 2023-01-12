@@ -1,6 +1,6 @@
 package com.jomkie.spring;
 
-import com.jomkie.spring.demo.free.FreeClass;
+import com.jomkie.spring.demo.free.entity.FreeClass;
 import com.jomkie.spring.demo.lookup.ShowFeature;
 import com.jomkie.spring.demo.replace.OriginalRun;
 import com.jomkie.spring.entity.User;

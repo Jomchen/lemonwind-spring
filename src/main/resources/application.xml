@@ -31,7 +31,7 @@
        </replaced-method>
     </bean>
 
-    <bean id = "freeClass" class="com.jomkie.spring.demo.free.FreeClass" p:id="1000"
+    <bean id = "freeClass" class="com.jomkie.spring.demo.free.entity.FreeClass" p:id="1000"
           p:username="Kangkang" p:age="22" p:address="天津"/>
 
 </beans>
