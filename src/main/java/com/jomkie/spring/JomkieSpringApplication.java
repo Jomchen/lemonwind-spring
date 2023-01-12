@@ -27,7 +27,10 @@ public class JomkieSpringApplication {
         originalRun.method(new ArrayList());
 
        FreeClass freeClass = applicationContext.getBean(FreeClass.class);
-        System.out.println(freeClass.getUsername());
+       System.out.println(freeClass.getUsername());
+
+       JomkieSpringApplication registedBeanCustomized = (JomkieSpringApplication) applicationContext.getBean("jomkieSpringApplication");
+       System.out.println(null == registedBeanCustomized);
     }
 
 }
