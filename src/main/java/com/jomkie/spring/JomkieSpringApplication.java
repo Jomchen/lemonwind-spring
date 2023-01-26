@@ -4,12 +4,16 @@ import com.jomkie.spring.demo.free.entity.FreeClass;
 import com.jomkie.spring.demo.lookup.ShowFeature;
 import com.jomkie.spring.demo.replace.OriginalRun;
 import com.jomkie.spring.entity.User;
+import lombok.Data;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
 
+@Data
 public class JomkieSpringApplication {
+
+    private String systemName;
 
     @Test
     public static void main(String[] args) {
