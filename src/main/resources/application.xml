@@ -31,7 +31,11 @@
        </replaced-method>
     </bean>
 
+    <!-- 自定义类实例化 -->
     <bean id = "freeClass" class="com.jomkie.spring.demo.free.entity.FreeClass" p:id="1000"
           p:username="Kangkang" p:age="22" p:address="天津"/>
+
+    <!-- 自定义扫描 -->
+    <bean id = "testBean" class="com.jomkie.spring.demo.config.scan.TestBeanScan"/>
 
 </beans>

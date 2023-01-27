@@ -2,6 +2,9 @@ package com.jomkie.spring.demo.free.entity;
 
 import lombok.Data;
 
+/**
+ * 自定义类实例化
+ */
 @Data
 public class FreeClass {
 
