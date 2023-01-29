@@ -7,6 +7,7 @@ import com.jomkie.spring.demo.replace.OriginalRun;
 import com.jomkie.spring.entity.User;
 import lombok.Data;
 import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
@@ -16,8 +17,7 @@ public class JomkieSpringApplication {
 
     private String systemName;
 
-    @Test
-    public static void main(String[] args) {
+    public static void xmlMethod() {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
         User bean = applicationContext.getBean(User.class);
         System.out.println(bean.getUsername());
@@ -31,17 +31,26 @@ public class JomkieSpringApplication {
         originalRun.method("Linux");
         originalRun.method(new ArrayList());
 
-       FreeClass freeClass = applicationContext.getBean(FreeClass.class);
-       System.out.println(freeClass.getUsername());
+        FreeClass freeClass = applicationContext.getBean(FreeClass.class);
+        System.out.println(freeClass.getUsername());
 
-       // 测试是否获取到了自定义的的 BeanDefiniation 实例
-       JomkieSpringApplication registedBeanCustomized = (JomkieSpringApplication) applicationContext.getBean("jomkieSpringApplication");
-       System.out.println(registedBeanCustomized.getSystemName());
+        // 测试是否获取到了自定义的的 BeanDefiniation 实例
+        JomkieSpringApplication registedBeanCustomized = (JomkieSpringApplication) applicationContext.getBean("jomkieSpringApplication");
+        System.out.println(registedBeanCustomized.getSystemName());
 
-       // 测试自定义扫描路径进行实例化
-       ScannedEntityFirst scannedEntityFirst = applicationContext.getBean(ScannedEntityFirst.class);
-       System.out.println(scannedEntityFirst.getUsername());
+        // 测试自定义扫描路径进行实例化
+        ScannedEntityFirst scannedEntityFirst = applicationContext.getBean(ScannedEntityFirst.class);
+        System.out.println(scannedEntityFirst.getUsername());
 
+    }
+
+    public static void annotationMethod() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.jomkie.spring");
+    }
+
+    public static void main(String[] args) {
+//        xmlMethod();
+        annotationMethod();
     }
 
 }
