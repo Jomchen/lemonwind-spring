@@ -1,5 +1,6 @@
 package com.jomkie.spring;
 
+import com.jomkie.spring.annotationscan.AnnoScan;
 import com.jomkie.spring.demo.config.scan.scanentity.ScannedEntityFirst;
 import com.jomkie.spring.demo.free.entity.FreeClass;
 import com.jomkie.spring.demo.lookup.ShowFeature;
@@ -48,9 +49,14 @@ public class JomkieSpringApplication {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.jomkie.spring");
     }
 
+    public static void annotationMethod2() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnoScan.class);
+    }
+
     public static void main(String[] args) {
 //        xmlMethod();
-        annotationMethod();
+//        annotationMethod();
+        annotationMethod2();
     }
 
 }
