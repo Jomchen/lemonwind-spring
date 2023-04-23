@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mylabel="http://www.jomkie.spring/schema/jolabel"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
@@ -10,6 +11,8 @@
        https://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.jomkie.spring/schema/jolabel
+       http://www.jomkie.spring/schema/jolabel.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
@@ -37,5 +40,13 @@
 
     <!-- 自定义扫描 -->
     <bean id = "testBean" class="com.jomkie.spring.demo.config.scan.TestBeanScan"/>
+
+    <!-- 注意头部的以下三行需要加上，那么在当前作用域中配置 <mylabel:jolabel 才生效
+    xmlns:mylabel="http://www.jomkie.spring/schema/jolabel"
+    http://www.jomkie.spring/schema/jolabel
+    http://www.jomkie.spring/schema/jolabel.xsd
+    -->
+    <!-- 测试自定义标签的生效情况 -->
+    <mylabel:jolabel id="jolabel" username="jomkie" age="999"/>
 
 </beans>

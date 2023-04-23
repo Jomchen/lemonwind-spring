@@ -21,6 +21,7 @@ public class JomkieSpringApplication {
     public static void xmlMethod() {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
         User bean = applicationContext.getBean(User.class);
+        Object jolabel = applicationContext.getBean("jolabel");
         System.out.println(bean.getUsername());
 
         // 测试 lookup

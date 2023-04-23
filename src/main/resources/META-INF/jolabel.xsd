@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.jomkie.spring/schema/jolabel"
+        elementFormDefault="qualified">
+
+    <!-- 以上的 targetNamespace 是命名空间 -->
+
+   <element name="jolabel"> <!-- 这里的 name 是标签名 -->
+       <complexType>
+           <attribute name="id" type="string"/>
+           <attribute name="username" type="string"/>
+           <attribute name="age" type="integer"/>
+       </complexType>
+   </element>
+</schema>
