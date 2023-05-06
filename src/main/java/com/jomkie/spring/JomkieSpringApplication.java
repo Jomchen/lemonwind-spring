@@ -55,9 +55,9 @@ public class JomkieSpringApplication {
     }
 
     public static void main(String[] args) {
-//        xmlMethod();
+        xmlMethod();
 //        annotationMethod();
-        annotationMethod2();
+//        annotationMethod2();
     }
 
 }
