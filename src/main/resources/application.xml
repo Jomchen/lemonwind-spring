@@ -16,6 +16,9 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
+    <!-- 要加上这个标签，否则 xml 解析spring 的方式无法用占位符进行动态取值 -->
+    <context:property-placeholder location="application.properties"/>
+
     <context:component-scan base-package="com.jomkie.spring.demo.free"/>
 
     <bean id="user" class="com.jomkie.spring.entity.User">

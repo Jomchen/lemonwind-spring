@@ -15,6 +15,10 @@ import org.springframework.core.type.filter.AnnotationTypeFilter;
 import org.springframework.core.type.filter.TypeFilter;
 import org.springframework.stereotype.Component;
 
+/**
+ * 手动加入一个 BeanDefinition
+ * 通过扫描自定义的注解进行注册 BeanDefinition
+ */
 @Component
 public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor, PriorityOrdered {
 

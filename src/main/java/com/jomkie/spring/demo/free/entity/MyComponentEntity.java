@@ -4,7 +4,7 @@ import com.jomkie.spring.demo.free.annotation.MyComponent;
 import lombok.Data;
 
 /**
- * 自定义注解的扫描类
+ * 自定义注解的扫描类并实例化
  */
 @Data
 @MyComponent

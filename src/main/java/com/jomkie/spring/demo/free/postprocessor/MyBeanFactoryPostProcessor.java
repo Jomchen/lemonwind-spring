@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 遍历 BeanDefination，注意优先级
+ */
 @Component
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor, PriorityOrdered {
 
