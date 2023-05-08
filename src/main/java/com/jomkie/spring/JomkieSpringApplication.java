@@ -11,6 +11,8 @@ import lombok.Data;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 
 import java.util.ArrayList;
 
@@ -51,6 +53,10 @@ public class JomkieSpringApplication {
         // 测试配置文件注册的BeanDefinition的生效情况
         PlaceHolderBeanFirst placeHolderBeanFirst = applicationContext.getBean(PlaceHolderBeanFirst.class);
         System.out.println(placeHolderBeanFirst.getKey());
+        System.out.println(placeHolderBeanFirst.getVal());
+
+        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = applicationContext.getBean(PropertySourcesPlaceholderConfigurer.class);
+        System.out.println(propertySourcesPlaceholderConfigurer);
 
     }
 
