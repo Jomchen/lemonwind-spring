@@ -15,8 +15,9 @@ import java.util.Properties;
 
 /**
  * 通过配置文件解析并注册 BeanDefinition
+ * （以注解的方式不能使用此类，因为未解决 属性解析器）
  */
-@Component
+//@Component
 public class LoadFileBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
 
     @Override

@@ -7,6 +7,7 @@ import com.jomkie.spring.demo.lookup.ShowFeature;
 import com.jomkie.spring.demo.placeholder.PlaceHolderBeanFirst;
 import com.jomkie.spring.demo.replace.OriginalRun;
 import com.jomkie.spring.entity.User;
+import com.jomkie.spring.service.MyFirstService;
 import lombok.Data;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -66,12 +67,15 @@ public class JomkieSpringApplication {
 
     public static void annotationMethod2() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnoScan.class);
+        // 实验aop效果
+        MyFirstService myFirstService = (MyFirstService) applicationContext.getBean("myFirstService");
+        myFirstService.test();
     }
 
     public static void main(String[] args) {
-        xmlMethod();
+//        xmlMethod();
 //        annotationMethod();
-//        annotationMethod2();
+        annotationMethod2();
     }
 
 }
