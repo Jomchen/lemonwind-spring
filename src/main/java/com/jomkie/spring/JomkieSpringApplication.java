@@ -8,12 +8,12 @@ import com.jomkie.spring.demo.placeholder.PlaceHolderBeanFirst;
 import com.jomkie.spring.demo.replace.OriginalRun;
 import com.jomkie.spring.entity.User;
 import com.jomkie.spring.service.MyFirstService;
+import com.jomkie.spring.service.MyFirstServiceImpl;
 import lombok.Data;
-import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
 
 import java.util.ArrayList;
 
@@ -67,9 +67,11 @@ public class JomkieSpringApplication {
 
     public static void annotationMethod2() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnoScan.class);
-        // 实验aop效果
-        MyFirstService myFirstService = (MyFirstService) applicationContext.getBean("myFirstService");
+        // 实验注解aop效果
+        MyFirstService myFirstService = (MyFirstService) applicationContext.getBean(MyFirstService.class);
         myFirstService.test();
+        // 实验自定义aop效果
+        myFirstService.second();
     }
 
     public static void main(String[] args) {
