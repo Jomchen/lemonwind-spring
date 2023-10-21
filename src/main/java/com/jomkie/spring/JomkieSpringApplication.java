@@ -9,6 +9,7 @@ import com.jomkie.spring.demo.replace.OriginalRun;
 import com.jomkie.spring.entity.User;
 import com.jomkie.spring.service.MyFirstService;
 import com.jomkie.spring.service.MyFirstServiceImpl;
+import com.jomkie.spring.service.MySecondService;
 import lombok.Data;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -72,6 +73,8 @@ public class JomkieSpringApplication {
         myFirstService.test();
         // 实验自定义aop效果
         myFirstService.second();
+        MySecondService mySecondService = (MySecondService) applicationContext.getBean(MySecondService.class);
+        mySecondService.secondHandler();
     }
 
     public static void main(String[] args) {

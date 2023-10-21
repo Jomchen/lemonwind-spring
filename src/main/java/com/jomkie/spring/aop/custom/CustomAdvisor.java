@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 自定义切面
+ * 这种方式是全局性代理，这样影响性能
  */
 @Component
 public class CustomAdvisor implements PointcutAdvisor {
