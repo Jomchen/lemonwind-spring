@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.jomkie.spring/schema/jolabel"
+        targetNamespace="http://www.lemonwind.spring/schema/jolabel"
         elementFormDefault="qualified">
 
     <!-- 以上的 targetNamespace 是命名空间 -->

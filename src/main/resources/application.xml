@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mylabel="http://www.jomkie.spring/schema/jolabel"
+       xmlns:mylabel="http://www.lemonwind.spring/schema/jolabel"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
@@ -11,38 +11,38 @@
        https://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.jomkie.spring/schema/jolabel
-       http://www.jomkie.spring/schema/jolabel.xsd
+       http://www.lemonwind.spring/schema/jolabel
+       http://www.lemonwind.spring/schema/jolabel.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
     <!-- 要加上这个标签，否则 xml 解析spring 的方式无法用占位符进行动态取值 -->
     <context:property-placeholder location="application.properties"/>
 
-    <context:component-scan base-package="com.jomkie.spring.demo.free"/>
+    <context:component-scan base-package="com.lemonwind.spring.demo.free"/>
 
-    <bean id="user" class="com.jomkie.spring.entity.User">
+    <bean id="user" class="com.lemonwind.spring.entity.User">
         <property name="username" value="独孤求败"/>
     </bean>
 
-    <bean id="flyFeature" class="com.jomkie.spring.demo.lookup.FlyFeature"/>
-    <bean id="showFeature" class="com.jomkie.spring.demo.lookup.ShowFeature">
+    <bean id="flyFeature" class="com.lemonwind.spring.demo.lookup.FlyFeature"/>
+    <bean id="showFeature" class="com.lemonwind.spring.demo.lookup.ShowFeature">
         <lookup-method name="getFeature"  bean="flyFeature"/>
     </bean>
 
-    <bean id = "runReplacer" class="com.jomkie.spring.demo.replace.RunReplacer"/>
-    <bean id = "originalRun" class="com.jomkie.spring.demo.replace.OriginalRun">
+    <bean id = "runReplacer" class="com.lemonwind.spring.demo.replace.RunReplacer"/>
+    <bean id = "originalRun" class="com.lemonwind.spring.demo.replace.OriginalRun">
        <replaced-method name="method" replacer="runReplacer">
            <arg-type match="java.lang.String"/>
        </replaced-method>
     </bean>
 
     <!-- 自定义类实例化 -->
-    <bean id = "freeClass" class="com.jomkie.spring.demo.free.entity.FreeClass" p:id="1000"
+    <bean id = "freeClass" class="com.lemonwind.spring.demo.free.entity.FreeClass" p:id="1000"
           p:username="Kangkang" p:age="22" p:address="天津"/>
 
     <!-- 自定义扫描 -->
-    <bean id = "testBean" class="com.jomkie.spring.demo.config.scan.TestBeanScan"/>
+    <bean id = "testBean" class="com.lemonwind.spring.demo.config.scan.TestBeanScan"/>
 
     <!-- 注意头部的以下三行需要加上，那么在当前作用域中配置 <mylabel:jolabel 才生效
     xmlns:mylabel="http://www.jomkie.spring/schema/jolabel"
