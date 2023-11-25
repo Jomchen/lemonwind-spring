@@ -43,7 +43,7 @@ public class LemonwindSpringApplication {
         System.out.println(freeClass.getUsername());
 
         // 测试是否获取到了自定义的的 BeanDefiniation 实例
-        LemonwindSpringApplication registedBeanCustomized = (LemonwindSpringApplication) applicationContext.getBean("jomkieSpringApplication");
+        LemonwindSpringApplication registedBeanCustomized = (LemonwindSpringApplication) applicationContext.getBean("lemonwindSpringApplication");
         System.out.println(registedBeanCustomized.getSystemName());
 
         // 测试自定义扫描路径进行实例化

@@ -45,11 +45,11 @@
     <bean id = "testBean" class="com.lemonwind.spring.demo.config.scan.TestBeanScan"/>
 
     <!-- 注意头部的以下三行需要加上，那么在当前作用域中配置 <mylabel:jolabel 才生效
-    xmlns:mylabel="http://www.jomkie.spring/schema/jolabel"
-    http://www.jomkie.spring/schema/jolabel
-    http://www.jomkie.spring/schema/jolabel.xsd
+    xmlns:mylabel="http://www.lemonwind.spring/schema/jolabel"
+    http://www.lemonwind.spring/schema/jolabel
+    http://www.lemonwind.spring/schema/jolabel.xsd
     -->
     <!-- 测试自定义标签的生效情况 -->
-    <mylabel:jolabel id="jolabel" username="jomkie" age="999"/>
+    <mylabel:jolabel id="jolabel" username="lemonwind" age="999"/>
 
 </beans>

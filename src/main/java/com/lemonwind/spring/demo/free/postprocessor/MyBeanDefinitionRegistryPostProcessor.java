@@ -29,7 +29,7 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
         genericBeanDefinition.setBeanClass(LemonwindSpringApplication.class);
         MutablePropertyValues mutablePropertyValues = genericBeanDefinition.getPropertyValues();
         mutablePropertyValues.addPropertyValue(new PropertyValue("systemName", "Spring学习系统"));
-        registry.registerBeanDefinition("jomkieSpringApplication", genericBeanDefinition);
+        registry.registerBeanDefinition("lemonwindSpringApplication", genericBeanDefinition);
         System.out.println(" MyBeanDefinitionRegistryPostProcessor postProcessBeanDefinitionRegistry --> " + registry.getClass().getName());
 
         // 将扫描相应路径下有 @MyComponent 注解的类用于实例化
