@@ -1,6 +1,7 @@
 package com.lemonwind.spring;
 
 import com.lemonwind.spring.annotationscan.AnnoScan;
+import com.lemonwind.spring.demo.config.jiekouscan.MyJiekou;
 import com.lemonwind.spring.demo.config.scan.scanentity.ScannedEntityFirst;
 import com.lemonwind.spring.demo.free.entity.FreeClass;
 import com.lemonwind.spring.demo.lookup.ShowFeature;
@@ -60,10 +61,6 @@ public class LemonwindSpringApplication {
 
     }
 
-    public static void annotationMethod() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.lemonwind.spring");
-    }
-
     public static void annotationMethod2() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnoScan.class);
         // 实验注解aop效果
@@ -73,11 +70,14 @@ public class LemonwindSpringApplication {
         myFirstService.second();
         MySecondService mySecondService = (MySecondService) applicationContext.getBean(MySecondService.class);
         mySecondService.secondHandler();
+
+        // 实验对接口扫描，并对其进行代理
+        MyJiekou myJiekou = applicationContext.getBean(MyJiekou.class);
+        System.out.println(":::::::::::::::" + myJiekou.kanData());
     }
 
     public static void main(String[] args) {
 //        xmlMethod();
-//        annotationMethod();
         annotationMethod2();
     }
 

@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * 遍历 BeanDefination，注意优先级
+ * BeanFactoryPostProcessor 的后置处理
  */
 @Component
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor, PriorityOrdered {

@@ -11,6 +11,9 @@ import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 实验通过注解获取属性
+ */
 public class BeanScannerRegister implements ImportBeanDefinitionRegistrar {
 
     @Override
